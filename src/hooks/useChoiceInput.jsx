@@ -12,6 +12,7 @@ const useChoiceInput = (elementNewChoise, optionsChoice = {}) => {
 
   useEffect(() => {
     if (!elementNewChoise) return
+
     const newChoice = new Choices(elementNewChoise, {
       ...DEFAULT_OPTIONS,
       ...optionsChoice,
@@ -23,6 +24,9 @@ const useChoiceInput = (elementNewChoise, optionsChoice = {}) => {
 
     return () => {
       newChoice.destroy()
+      setChoiceInputs((choices) => {
+        return choices.filter((choice) => choice !== newChoice)
+      })
     }
   }, [])
 
