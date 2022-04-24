@@ -22,26 +22,18 @@ function App() {
         <img className="w-16 h-16 mt-4 mb-4 rounded border-2 border-dashed border-black hover:border-yellow-500 cursor-pointer" src="/logo.svg" alt="Logo" />
       </a>
 
-      <Switch>
-        <Route path="/">
-          <header className="text-center">
-            <h1 className="font-mono text-4xl font-bold md:text-6xl">Ejercicios de Algoritmia</h1>
-            <h2 className="font-mono text-2xl font-medium md:text-4xl">
-              Resueltos con <span className="font-bold md:font-semibold">Javascript</span>
-            </h2>
-          </header>
-        </Route>
-
-        <Route path="/:all">
-          <Selector/>
-        </Route>
-      </Switch>
+      <Selector />
 
       <div className="w-11/12 h-[60%] text-xl p-5 bg-white rounded-2xl overflow-x-hidden overflow-y-auto border-2 border-black border-dotted mt-5 md:w-4/5 md:text-2xl">
         <div className="w-full h-auto min-h-full flex items-center justify-center text-center break-words">
           <Switch>
             <Route path="/">
-              <Selector/>
+              <header className="text-center">
+                <h1 className="font-mono text-4xl font-bold md:text-6xl">Ejercicios de Algoritmia</h1>
+                <h2 className="font-mono text-2xl font-medium md:text-4xl">
+                  Resueltos con <span className="font-bold md:font-semibold">Javascript</span>
+                </h2>
+              </header>
             </Route>
 
             <Route path="/:all">

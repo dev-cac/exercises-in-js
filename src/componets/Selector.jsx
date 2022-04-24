@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useLocation } from 'wouter'
 
 import useChoiceInput from '../hooks/useChoiceInput';
@@ -18,19 +18,25 @@ function Selector () {
     return selected ? selected : 'default'
   })
 
+  useEffect(() => {
+    let selected = location.split('/')[1]
+    selected = selected === '' ? null : selected
+
+    setSelected(selected ? selected : 'default')
+  } , [location])
+
   const handleSelect = async (e) => {
     const { value } = e.target
     await clearChoices()
 
     setLocation(`/${value}`)
-    setSelected(value)
   }
 
   return (
     <div>
       <select
         value={selected}
-        className="border-2 text-xl border-black border-dotted rounded-2xl p-4 bg-yellow-200/20 hover:bg-yellow-200 outline-none md:text-2xl"
+        className="border-2 text-xl border-black border-dotted rounded-2xl p-4 bg-yellow-200/20 hover:bg-yellow-200 outline-none md:text-2xl cursor-pointer"
         name="exercises" onChange={handleSelect}
       >
         <option value="default" hidden disabled>Seleccione un Ejercicio: </option>

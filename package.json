@@ -13,6 +13,7 @@
     "choices.js": "10.1.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
+    "react-loading-spin": "2.1.9",
     "wouter": "2.8.0-alpha.2"
   },
   "devDependencies": {
