@@ -1,7 +1,14 @@
+import useChoiceInput from '../../hooks/useChoiceInput';
+
 const Exercise = () => {
+  useChoiceInput('#choices-exercise2', {
+    removeItems: true,
+    removeItemButton: true,
+  });
+
   return (
     <>
-      Ejercicio 2
+      <input type="text" id="choices-exercise2"/>
     </>
   )
 }

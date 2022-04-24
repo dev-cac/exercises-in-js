@@ -1,14 +1,26 @@
-import { Link, Route, Switch } from "wouter";
+import { Route, Switch, useLocation } from "wouter";
+
+import useChoiceInput from '../hooks/useChoiceInput';
 
 import Menu from "./Menu"
 import Selector from "./Selector"
 
 function App() {
+  const { clearChoices } = useChoiceInput()
+  const [, setLocation] = useLocation()
+
+  const toHome = async (e) => {
+    e.preventDefault()
+
+    await clearChoices()
+    setLocation("/")
+  }
+
   return (
     <div className="w-full h-full flex flex-col items-center">
-      <Link to="/" >
+      <a href="/" onClick={toHome}>
         <img className="w-16 h-16 mt-4 mb-4 rounded border-2 border-dashed border-black hover:border-yellow-500 cursor-pointer" src="/logo.svg" alt="Logo" />
-      </Link>
+      </a>
 
       <Switch>
         <Route path="/">
@@ -21,7 +33,6 @@ function App() {
         </Route>
 
         <Route path="/:all">
-          <span className="font-extrabold text-2xl mb-2">Ejercicios: </span>
           <Selector/>
         </Route>
       </Switch>

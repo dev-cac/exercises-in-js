@@ -1,10 +1,14 @@
 import { useState } from "react"
 import { useLocation } from 'wouter'
 
+import useChoiceInput from '../hooks/useChoiceInput';
+
 import { exercises } from '../exercises'
 
 function Selector () {
+  const { clearChoices } = useChoiceInput()
   const [location, setLocation] = useLocation()
+
   const [selected, setSelected] = useState(() => {
     let selected = location.split('/')[1]
     selected = selected === '' ? null : selected
@@ -14,8 +18,10 @@ function Selector () {
     return selected ? selected : 'default'
   })
 
-  const handleSelect = (e) => {
+  const handleSelect = async (e) => {
     const { value } = e.target
+    await clearChoices()
+
     setLocation(`/${value}`)
     setSelected(value)
   }
