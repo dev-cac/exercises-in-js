@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "choices.js": "10.1.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "wouter": "2.8.0-alpha.2"
@@ -19,7 +20,7 @@
     "@types/react-dom": "18.0.0",
     "@vitejs/plugin-react": "1.3.0",
     "autoprefixer": "10.4.4",
-    "cpy-cli": "^4.1.0",
+    "cpy-cli": "4.1.0",
     "postcss": "8.4.12",
     "tailwindcss": "3.0.24",
     "vite": "2.9.5"

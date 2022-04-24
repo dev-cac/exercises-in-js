@@ -24,7 +24,7 @@ function Selector () {
     <div>
       <select
         value={selected}
-        className="border-2 text-2xl border-black border-dotted rounded-2xl p-4 bg-yellow-200/20 hover:bg-yellow-200 outline-none"
+        className="border-2 text-xl border-black border-dotted rounded-2xl p-4 bg-yellow-200/20 hover:bg-yellow-200 outline-none md:text-2xl"
         name="exercises" onChange={handleSelect}
       >
         <option value="default" hidden disabled>Seleccione un Ejercicio: </option>

@@ -1,8 +1,8 @@
 const Exercise = () => {
   return (
-    <div>
+    <>
       Ejercicio 4
-    </div>
+    </>
   )
 }
 

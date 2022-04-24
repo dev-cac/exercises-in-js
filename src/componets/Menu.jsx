@@ -17,11 +17,9 @@ function Menu () {
   const ExerciseComponent = lazy(() => import(`./exercises/${exercise.component}.jsx`))
 
   return (
-    <div>
-      <Suspense fallback={<div>Cargando...</div>}>
-        <ExerciseComponent />
-      </Suspense>
-    </div>
+    <Suspense fallback={<div>Cargando...</div>}>
+      <ExerciseComponent />
+    </Suspense>
   )
 }
 
