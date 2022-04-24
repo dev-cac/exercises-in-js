@@ -5,6 +5,12 @@ import ChoiceContext from '../context/choiceContext'
 
 const DEFAULT_OPTIONS = {
   allowHTML: true,
+  removeItems: true,
+  removeItemButton: true,
+  loadingText: 'Cargando...',
+  addItemText: (value) => {
+    return `Presiona Enter para agregar <b>"${value}"</b>`;
+  },
 }
 
 const useChoiceInput = (elementNewChoise, optionsChoice = {}) => {
