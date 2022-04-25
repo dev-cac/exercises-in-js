@@ -10,13 +10,12 @@ const Exercise = () => {
     maxItemCount: MAX_NUM,
     placeholderValue: `Ingrese ${MAX_NUM} numeros`,
     customAddItemText: 'Solo puede ingresar numeros',
-    uniqueItemText: 'No puede ingresar el mismo valor',
     duplicateItemsAllowed: false,
     maxItemText: (maxItemCount) => {
       return `Solo puedes agregar ${maxItemCount} numeros`
     },
     addItemFilter: (value) => {
-      return /^-?\d*(\.\d+)?$/.test(value)
+      return /^(-\d+)?\d*(\.\d+)?$/.test(value)
     }
   })
 

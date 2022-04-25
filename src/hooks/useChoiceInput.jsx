@@ -8,6 +8,7 @@ const DEFAULT_OPTIONS = {
   removeItems: true,
   removeItemButton: true,
   loadingText: 'Cargando...',
+  uniqueItemText: 'No puede ingresar el mismo valor',
   addItemText: (value) => {
     return `Presiona Enter para agregar <b>"${value}"</b>`
   }

@@ -14,7 +14,7 @@ const Exercise = () => {
       return `Solo puedes agregar ${maxItemCount} numeros`
     },
     addItemFilter: (value) => {
-      return /^-?\d*(\.\d+)?$/.test(value)
+      return /^(-\d+)?\d*(\.\d+)?$/.test(value)
     }
   })
 

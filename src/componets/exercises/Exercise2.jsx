@@ -14,7 +14,7 @@ const Exercise = () => {
       return `Solo puedes agregar ${maxItemCount} notas`
     },
     addItemFilter: (value) => {
-      if (/^-?\d*(\.\d+)?$/.test(value)) {
+      if (/^(-\d+)?\d*(\.\d+)?$/.test(value)) {
         const num = parseFloat(value)
         return num >= 0 && num <= 5
       }
