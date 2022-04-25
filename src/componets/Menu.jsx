@@ -1,9 +1,9 @@
-import { Suspense, useEffect, useState, lazy } from 'react';
+import { Suspense, useEffect, useState, lazy } from 'react'
 import { useLocation } from 'wouter'
 
 import Loading from './Loading'
 
-import { exercises } from '../exercises'
+import { exercises } from '@/exercises'
 
 function Menu () {
   const [location, setLocation] = useLocation()
@@ -21,8 +21,8 @@ function Menu () {
   const ExerciseComponent = lazy(() => import(`./exercises/${exercise.component}.jsx`))
 
   return (
-    <Suspense fallback={<Loading/>}>
-      <ExerciseComponent />
+    <Suspense fallback={<Loading />}>
+      {ExerciseComponent ? <ExerciseComponent /> : <Loading />}
     </Suspense>
   )
 }

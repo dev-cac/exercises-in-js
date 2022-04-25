@@ -2,7 +2,7 @@ import { useState, createContext } from 'react'
 
 const Context = createContext({
   choiceInputs: {},
-  setChoiceInputs: () => {},
+  setChoiceInputs: () => {}
 })
 
 export const ChoicesContextProvider = ({ children }) => {
@@ -10,7 +10,7 @@ export const ChoicesContextProvider = ({ children }) => {
 
   return (
     <Context.Provider value={{ choiceInputs, setChoiceInputs }}>
-        {children}
+      {children}
     </Context.Provider>
   )
 }

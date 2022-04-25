@@ -1,7 +1,7 @@
 import { useEffect, useContext } from 'react'
 import Choices from 'choices.js'
 
-import ChoiceContext from '../context/choiceContext'
+import ChoiceContext from '@/context/choiceContext'
 
 const DEFAULT_OPTIONS = {
   allowHTML: true,
@@ -9,8 +9,8 @@ const DEFAULT_OPTIONS = {
   removeItemButton: true,
   loadingText: 'Cargando...',
   addItemText: (value) => {
-    return `Presiona Enter para agregar <b>"${value}"</b>`;
-  },
+    return `Presiona Enter para agregar <b>"${value}"</b>`
+  }
 }
 
 const useChoiceInput = (elementNewChoise, optionsChoice = {}) => {
@@ -21,7 +21,7 @@ const useChoiceInput = (elementNewChoise, optionsChoice = {}) => {
 
     const newChoice = new Choices(elementNewChoise, {
       ...DEFAULT_OPTIONS,
-      ...optionsChoice,
+      ...optionsChoice
     })
 
     setChoiceInputs((choices) => {
@@ -43,7 +43,7 @@ const useChoiceInput = (elementNewChoise, optionsChoice = {}) => {
 
   return {
     choiceInputs,
-    clearChoices,
+    clearChoices
   }
 }
 
