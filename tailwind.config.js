@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: 'class',
   mode: 'jit',
   content: [
     'index.html',

@@ -1,11 +1,13 @@
 import { Route, Switch, useLocation } from 'wouter'
 
 import useChoiceInput from '@/hooks/useChoiceInput'
+import useDarkMode from '@/hooks/useDarkMode'
 
 import Menu from './Menu'
 import Selector from './Selector'
 
 function App () {
+  const { darkMode, toggleDarkMode } = useDarkMode()
   const { clearChoices } = useChoiceInput()
   const [, setLocation] = useLocation()
 
@@ -17,15 +19,17 @@ function App () {
   }
 
   return (
-    <div className='w-full h-full flex flex-col items-center'>
+    <div className='flex flex-col items-center w-full h-full'>
       <a href='/' onClick={toHome}>
-        <img className='w-16 h-16 mt-4 mb-4 rounded border-2 border-dashed border-black hover:border-yellow-500 cursor-pointer' src='/logo.svg' alt='Logo' />
+        <img className='w-16 h-16 mt-4 mb-4 font-bold border-2 border-black border-dashed rounded cursor-pointer hover:border-yellow-500 dark:border-slate-200' src='/logo.svg' alt='Logo' />
       </a>
 
       <Selector />
 
-      <div className='w-11/12 h-[60%] text-xl p-5 bg-white rounded-2xl overflow-x-hidden overflow-y-auto border-2 border-black border-dotted mt-5 md:w-4/5 md:text-2xl'>
-        <div className='w-full h-auto min-h-full flex flex-col items-center justify-center text-center break-words'>
+      <button className='px-2 font-bold bg-yellow-600 border border-black dark:text-slate-200 dark:bg-slate-500 dark:border-slate-700' onClick={toggleDarkMode}>{darkMode === 'dark' ? 'Modo Claro' : 'Modo Oscuro'}</button>
+
+      <div className='w-11/12 h-[60%] text-xl p-5 bg-white rounded-2xl overflow-x-hidden overflow-y-auto border-2 border-black border-dotted mt-5 md:w-4/5 md:text-2xl dark:bg-slate-300'>
+        <div className='flex flex-col items-center justify-center w-full h-auto min-h-full text-center break-words'>
           <Switch>
             <Route path='/'>
               <header className='text-center'>
@@ -43,9 +47,9 @@ function App () {
         </div>
       </div>
 
-      <footer className='mt-5 text-center'>
+      <footer className='mt-5 text-center dark:text-slate-200'>
         Hecho con <span className='font-bold text-red-700'>♡</span> por <span className='font-bold'>Luis Osorio</span> y <span className='font-bold'>Bryan Muñoz</span><br />
-        <p className='font-bold text-gray-800'>Copyright &copy; 2022</p>
+        <p className='font-bold text-gray-800 dark:text-slate-400'>Copyright &copy; 2022</p>
       </footer>
     </div>
   )
