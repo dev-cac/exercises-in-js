@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Route, Switch, useLocation } from 'wouter'
 
 import useChoiceInput from '@/hooks/useChoiceInput'
@@ -11,6 +12,11 @@ function App () {
   const { clearChoices } = useChoiceInput()
   const [, setLocation] = useLocation()
 
+  useEffect(() => {
+    const classList = document.documentElement.classList
+    darkMode === 'dark' ? classList.add('theme--night') : classList.remove('theme--night')
+  }, [darkMode])
+
   const toHome = async (e) => {
     e.preventDefault()
 
@@ -20,13 +26,27 @@ function App () {
 
   return (
     <div className='flex flex-col items-center w-full h-full'>
+      <button className='p-5 absolute rounded-r-full left-0 top-5 bg-white/60 dark:bg-slate-800 z-10' onClick={toggleDarkMode}>
+        <div className='relative'>
+          <div className='theme-toggle theme-toggle-js'>
+            <span className='moon' />
+            <span className='sun' />
+            <small className='sun__ray' />
+            <small className='sun__ray' />
+            <small className='sun__ray' />
+            <small className='sun__ray' />
+            <small className='sun__ray' />
+            <small className='sun__ray' />
+          </div>
+        </div>
+
+      </button>
+
       <a href='/' onClick={toHome}>
         <img className='w-16 h-16 mt-4 mb-4 font-bold border-2 border-black border-dashed rounded cursor-pointer hover:border-yellow-500 dark:border-slate-200' src='/logo.svg' alt='Logo' />
       </a>
 
       <Selector />
-
-      <button className='px-2 font-bold bg-yellow-600 border border-black dark:text-slate-200 dark:bg-slate-500 dark:border-slate-700' onClick={toggleDarkMode}>{darkMode === 'dark' ? 'Modo Claro' : 'Modo Oscuro'}</button>
 
       <div className='w-11/12 h-[60%] text-xl p-5 bg-white rounded-2xl overflow-x-hidden overflow-y-auto border-2 border-black border-dotted mt-5 md:w-4/5 md:text-2xl dark:bg-slate-300'>
         <div className='flex flex-col items-center justify-center w-full h-auto min-h-full text-center break-words'>
