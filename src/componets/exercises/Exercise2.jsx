@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import useChoiceInput from '@/hooks/useChoiceInput'
 
+import Button from '@/componets/Button'
+
 const NUM_NOTES = 3
 
 const Exercise = () => {
@@ -43,10 +45,7 @@ const Exercise = () => {
       <h1 className='mb-5 font-mono font-bold uppercase'>Calcula tu Promedio</h1>
       <input className='dark:bg-slate-300' type='text' id='choices-exercise2' />
 
-      <button
-        className='p-4 text-base border-2 border-black border-solid rounded-lg hover:bg-yellow-300' onClick={handleClick}
-      >Calcular Nota Final
-      </button>
+      <Button handlerClick={handleClick}>Calcular Nota Final</Button>
 
       <div className={resStyles}>
         {resText || 'Ingresa tus notas :D'}

@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import useChoiceInput from '@/hooks/useChoiceInput'
 
+import Button from '@/componets/Button'
+
 const MAX_NUM = 1
 
 const Exercise = () => {
@@ -47,20 +49,17 @@ const Exercise = () => {
 
       <div className='flex flex-col justify-center w-auto'>
         <div className='flex flex-row items-center justify-start m-0'>
-          <input type='radio' className='accent-yellow-300' onChange={handleChange} id='male' name='gener' value='male' />
+          <input type='radio' className='accent-yellow-300 dark:accent-slate-900' onChange={handleChange} id='male' name='gener' value='male' />
           <label htmlFor='male' className='p-0 m-0 ml-2'>Hombre</label>
         </div>
 
         <div className='flex flex-row items-center justify-start m-0 mb-5'>
-          <input type='radio' className='accent-yellow-300' onChange={handleChange} id='female' name='gener' value='female' />
+          <input type='radio' className='accent-yellow-300 dark:accent-slate-900' onChange={handleChange} id='female' name='gener' value='female' />
           <label htmlFor='female' className='p-0 m-0 ml-2'>Mujer</label>
         </div>
       </div>
 
-      <button
-        className='p-4 text-base border-2 border-black border-solid rounded-lg hover:bg-yellow-300' onClick={handleClick}
-      >Calcular Pulsaciones
-      </button>
+      <Button handlerClick={handleClick}>Calcular Pulsaciones</Button>
 
       <div className='px-5 py-2 mt-5 text-xl rounded-sm'>
         {res ? <p className='font-bold'>Número de Pulsaciones: {res}</p> : 'Ingrese su Edad y Genero'}

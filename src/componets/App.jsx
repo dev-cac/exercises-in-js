@@ -68,7 +68,7 @@ function App () {
       </div>
 
       <footer className='mt-5 text-center dark:text-slate-200'>
-        Hecho con <span className='font-bold text-red-700'>♡</span> por <span className='font-bold'>Luis Osorio</span> y <span className='font-bold'>Bryan Muñoz</span><br />
+        Hecho con <span className='font-bold text-red-700 dark:text-red-300'>♡</span> por <span className='font-bold'>Luis Osorio</span> y <span className='font-bold'>Bryan Muñoz</span><br />
         <p className='font-bold text-gray-800 dark:text-slate-400'>Copyright &copy; 2022</p>
       </footer>
     </div>

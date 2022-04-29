@@ -7,22 +7,24 @@ import { exercises } from '@/exercises'
 
 function Menu () {
   const [location, setLocation] = useLocation()
+  const findExercise = (id) => exercises.find(exerci => exerci.id === parseInt(id))
+
   const [exercise, setExercise] = useState(() => {
-    return exercises.find(numExercise => numExercise.id === parseInt(location.split('/')[1]))
+    return findExercise(location.split('/')[1])
   })
 
   useEffect(() => {
-    const findExercise = exercises.find(numExercise => numExercise.id === parseInt(location.split('/')[1]))
-    if (!findExercise && location !== '/') return setLocation('/')
+    const isFindExercise = findExercise(location.split('/')[1])
+    if (!isFindExercise && location !== '/') return setLocation('/')
 
-    setExercise(findExercise)
+    setExercise(isFindExercise)
   }, [location])
 
   const ExerciseComponent = lazy(() => import(`./exercises/${exercise.component}.jsx`))
 
   return (
     <Suspense fallback={<Loading />}>
-      {ExerciseComponent ? <ExerciseComponent /> : <Loading />}
+      <ExerciseComponent />
     </Suspense>
   )
 }
