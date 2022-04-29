@@ -68,6 +68,21 @@ body {
   border-radius: 9999px !important;
 }
 
+.choices__list--dropdown {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(5px);
+
+  border-radius: 1rem !important;
+  width: 100%;
+}
+
+.choices__item--choice {
+  font-size: 0.5rem !important;
+  word-wrap: break-word !important;
+  word-break: normal !important;
+  line-height: normal !important;
+}
+
 /* DARK_MODE ============================================================== */
 :root {
   --color-primary: #ffffff70;
