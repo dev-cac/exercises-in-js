@@ -38,8 +38,8 @@ const Exercise = () => {
 
       <Button handlerClick={handleClick}>Ordenar Números</Button>
 
-      <div className='px-5 py-2 mt-5 rounded-sm'>
-        <ul className='list-disc'>
+      <div className='w-auto px-5 py-2 mt-5 rounded-sm'>
+        <ul className='list-disc text-left'>
           {
             res.length > 0
               ? res.map((num, index) => {
