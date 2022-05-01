@@ -15,7 +15,7 @@ const Exercise = () => {
     customAddItemText: 'La Edad esta catalogada de 0 a 120 años',
     duplicateItemsAllowed: false,
     maxItemText: (_maxItemCount) => {
-      return 'Solo puedes agregar su edad una vez :('
+      return 'Solo puedes agregar tu edad una vez :('
     },
     addItemFilter: (value) => {
       if (/^\d+$/.test(value)) {

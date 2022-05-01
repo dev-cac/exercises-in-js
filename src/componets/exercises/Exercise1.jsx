@@ -70,7 +70,7 @@ const Exercise = () => {
             __html: res
           }}
             />
-          : 'Ingresa tus Capital en Inversion y Tasa de Interes'}
+          : 'Ingresa tu Capital en Inversion y Tasa de Interes'}
       </div>
     </>
   )
