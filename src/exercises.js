@@ -29,7 +29,7 @@ export const exercises = [
 
         <li>Si el monto total de la compra no excede de $500.000 la empresa tendrá capacidad de invertir de su propio dinero un 70% y el restante 30% lo pagara solicitando crédito al fabricante.</li>
 
-        <li>El fabricante cobra por concepto de intereses un 20% sobre la cantidad que se le pague a crédito</li>
+        <li>El fabricante cobra por concepto de intereses un 20% sobre la cantidad que se le pague a crédito.</li>
       </ul>
     `
   },
@@ -75,6 +75,6 @@ export const exercises = [
     id: 10,
     name: 'Ejercicio 10',
     component: 'Exercise10',
-    description: 'Leer 10 números e imprimir solamente los números positivos'
+    description: 'Leer 10 números e imprimir solamente los números positivos.'
   }
 ]

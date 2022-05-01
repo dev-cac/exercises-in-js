@@ -6,7 +6,7 @@ import Loading from './Loading'
 
 import { exercises } from '@/exercises'
 
-function Menu () {
+function Menu ({ isOpenModal, setIsOpen }) {
   const [location, setLocation] = useLocation()
   const findExercise = (id) => exercises.find(exerci => exerci.id === parseInt(id))
 
@@ -25,7 +25,7 @@ function Menu () {
 
   return (
     <Suspense fallback={<Loading />}>
-      <Modal />
+      <Modal isOpen={isOpenModal} setIsOpen={setIsOpen} />
       <ExerciseComponent />
     </Suspense>
   )

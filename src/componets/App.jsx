@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Route, Switch, useLocation } from 'wouter'
 
 import useChoiceInput from '@/hooks/useChoiceInput'
@@ -11,6 +11,8 @@ function App () {
   const { darkMode, toggleDarkMode } = useDarkMode()
   const { clearChoices } = useChoiceInput()
   const [, setLocation] = useLocation()
+
+  const [isOpenModal, setIsOpen] = useState(false)
 
   useEffect(() => {
     const classList = document.documentElement.classList
@@ -48,7 +50,12 @@ function App () {
 
       <Selector />
 
-      <div className='w-11/12 h-[60%] relative text-xl p-5 bg-white rounded-2xl overflow-x-hidden overflow-y-auto border-2 border-black border-dotted mt-5 md:w-4/5 md:text-2xl dark:bg-slate-300'>
+      <div className={
+        `w-11/12 h-[60%] relative text-xl p-5 bg-white rounded-2xl overflow-x-hidden ${
+          isOpenModal ? 'overflow-y-hidden' : 'overflow-y-auto'
+        } border-2 border-black border-dotted mt-5 md:w-4/5 md:text-2xl dark:bg-slate-300`
+        }
+      >
         <div className='flex flex-col items-center justify-center w-full h-auto min-h-full text-center break-words'>
           <Switch>
             <Route path='/'>
@@ -61,7 +68,7 @@ function App () {
             </Route>
 
             <Route path='/:all'>
-              <Menu />
+              <Menu isOpenModal={isOpenModal} setIsOpen={setIsOpen} />
             </Route>
           </Switch>
         </div>
