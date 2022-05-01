@@ -12,7 +12,7 @@ const Exercise = () => {
 
   const { choiceInputs } = useChoiceInput('#choices-exercise4', {
     maxItemCount: MAX_PRICES,
-    placeholderValue: 'Ingrese el precio de su Compra',
+    placeholderValue: 'Precio de su Compra',
     customAddItemText: 'Solo puede ingresar un precio',
     maxItemText: (_maxItemCount) => {
       return 'Solo puedes agregar un saldo'
@@ -27,6 +27,8 @@ const Exercise = () => {
     const price = parseFloat(priceString[0])
 
     let percentInvest = 0; let percentLoan = 0; let credit = 0
+
+    if (isNaN(price)) return setRes(null)
 
     if (price >= 500000) {
       percentInvest = (price * 55) / 100

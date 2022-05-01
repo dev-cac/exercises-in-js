@@ -17,6 +17,10 @@ body {
 
 /* CHOICES ============================================================== */
 
+.choices {
+  margin-bottom: 1rem;
+}
+
 .choices__inner {
   border: 2px dotted rgba(66, 65, 65, 0.364);
   border-radius: 5rem !important;
@@ -34,6 +38,13 @@ body {
 .choices__inner, .choices__input--cloned {
   background-color: #fff;
   min-width: 20rem !important;
+}
+
+@media screen and (max-width: 522px) {
+  .choices__inner, .choices__input--cloned, .choices__input {
+    min-width: 10rem !important;
+    width: auto !important;
+  }
 }
 
 .dark .choices__inner {

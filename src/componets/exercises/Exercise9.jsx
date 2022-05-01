@@ -10,7 +10,7 @@ const Exercise = () => {
 
   const { choiceInputs } = useChoiceInput('#choices-exercise9', {
     maxItemCount: 1,
-    placeholderValue: 'Ingrese su capital actual',
+    placeholderValue: 'Capital actual',
     customAddItemText: 'Solo puede ingresar un monto valido',
     maxItemText: (_maxItemCount) => {
       return 'Solo puede ingresar un monto'
