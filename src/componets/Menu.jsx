@@ -1,6 +1,7 @@
 import { Suspense, useEffect, useState, lazy } from 'react'
 import { useLocation } from 'wouter'
 
+import Modal from './Modal'
 import Loading from './Loading'
 
 import { exercises } from '@/exercises'
@@ -24,6 +25,7 @@ function Menu () {
 
   return (
     <Suspense fallback={<Loading />}>
+      <Modal />
       <ExerciseComponent />
     </Suspense>
   )

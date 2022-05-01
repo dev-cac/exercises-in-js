@@ -48,7 +48,7 @@ function App () {
 
       <Selector />
 
-      <div className='w-11/12 h-[60%] text-xl p-5 bg-white rounded-2xl overflow-x-hidden overflow-y-auto border-2 border-black border-dotted mt-5 md:w-4/5 md:text-2xl dark:bg-slate-300'>
+      <div className='w-11/12 h-[60%] relative text-xl p-5 bg-white rounded-2xl overflow-x-hidden overflow-y-auto border-2 border-black border-dotted mt-5 md:w-4/5 md:text-2xl dark:bg-slate-300'>
         <div className='flex flex-col items-center justify-center w-full h-auto min-h-full text-center break-words'>
           <Switch>
             <Route path='/'>
