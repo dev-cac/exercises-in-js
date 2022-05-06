@@ -26,10 +26,10 @@ const Exercise = () => {
   useChoiceInput('#choices-exercise6-2', {
     maxItemCount: 1,
     placeholderValue: 'Años Laborados',
-    customAddItemText: 'Solo puede Ingresar el numero de años laborados',
+    customAddItemText: 'Solo puede Ingresar el número de años laborados',
     duplicateItemsAllowed: false,
     maxItemText: (_maxItemCount) => {
-      return 'Solo puede agregar una vez el numero de años laborados'
+      return 'Solo puede agregar una vez el número de años laborados'
     },
     addItemFilter: (value) => {
       if (/^\d+$/.test(value)) {

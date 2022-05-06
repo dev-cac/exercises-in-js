@@ -10,10 +10,10 @@ const Exercise = () => {
 
   const { choiceInputs } = useChoiceInput('#choices-exercise10', {
     maxItemCount: MAX_NUM,
-    placeholderValue: `Ingrese ${MAX_NUM} numeros`,
-    customAddItemText: 'Solo puede ingresar numeros',
+    placeholderValue: `Ingrese ${MAX_NUM} números`,
+    customAddItemText: 'Solo puede ingresar números',
     maxItemText: (maxItemCount) => {
-      return `Solo puedes agregar ${maxItemCount} numeros`
+      return `Solo puedes agregar ${maxItemCount} números`
     },
     addItemFilter: (value) => {
       return /^(-\d+)?\d*(\.\d+)?$/.test(value)
@@ -39,7 +39,7 @@ const Exercise = () => {
       <Button handlerClick={handleClick}>Encontrar Números</Button>
 
       <div className='w-auto px-5 py-2 mt-5 rounded-sm'>
-        <ul className='list-disc text-left'>
+        <ul className='text-left list-disc'>
           {
             res.length > 0
               ? res.map((num, index) => {

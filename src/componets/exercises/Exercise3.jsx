@@ -13,7 +13,7 @@ const Exercise = () => {
     placeholderValue: `Ingresa ${NUM_COUNT} números`,
     customAddItemText: 'Solo puede ingresar números',
     maxItemText: (maxItemCount) => {
-      return `Solo puedes agregar ${maxItemCount} numeros`
+      return `Solo puedes agregar ${maxItemCount} números`
     },
     addItemFilter: (value) => {
       return /^(-\d+)?\d*(\.\d+)?$/.test(value)
@@ -39,13 +39,13 @@ const Exercise = () => {
       <Button handlerClick={handleClick}>Ordenar Números</Button>
 
       <div className='w-auto px-5 py-2 mt-5 rounded-sm'>
-        <ul className='list-disc text-left'>
+        <ul className='text-left list-disc'>
           {
             res.length > 0
               ? res.map((num, index) => {
                 return <li key={index}>{num}</li>
               })
-              : 'Ingrese los numeros'
+              : 'Ingrese los números'
           }
         </ul>
       </div>

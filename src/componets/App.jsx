@@ -62,7 +62,7 @@ function App () {
               <header className='text-center'>
                 <h1 className='font-mono text-4xl font-bold md:text-6xl'>Ejercicios de Algoritmia</h1>
                 <h2 className='font-mono text-2xl font-medium md:text-4xl'>
-                  Resueltos con <span className='font-bold md:font-semibold'>Javascript</span>
+                  Resueltos con <span className='font-bold md:font-semibold'>JavaScript</span>
                 </h2>
               </header>
             </Route>

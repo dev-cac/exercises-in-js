@@ -10,11 +10,11 @@ const Exercise = () => {
 
   const { choiceInputs } = useChoiceInput('#choices-exercise5', {
     maxItemCount: MAX_NUM,
-    placeholderValue: `Ingrese ${MAX_NUM} numeros`,
-    customAddItemText: 'Solo puede ingresar numeros',
+    placeholderValue: `Ingrese ${MAX_NUM} números`,
+    customAddItemText: 'Solo puede ingresar números',
     duplicateItemsAllowed: false,
     maxItemText: (maxItemCount) => {
-      return `Solo puedes agregar ${maxItemCount} numeros`
+      return `Solo puedes agregar ${maxItemCount} números`
     },
     addItemFilter: (value) => {
       return /^(-\d+)?\d*(\.\d+)?$/.test(value)

@@ -22,10 +22,10 @@ const Exercise = () => {
 
   useChoiceInput('#choices-exercise1-2', {
     maxItemCount: 1,
-    placeholderValue: 'Tasa de Interes',
-    customAddItemText: 'Solo puede ingresar una Tasa de Interes',
+    placeholderValue: 'Tasa de Interés',
+    customAddItemText: 'Solo puede ingresar una Tasa de Interés',
     maxItemText: (_maxItemCount) => {
-      return 'Solo puedes ingresar la Tasa de Interes'
+      return 'Solo puedes ingresar la Tasa de Interés'
     },
     addItemFilter: (value) => {
       return /^\d*(\.\d+)?$/.test(value)
@@ -51,7 +51,7 @@ const Exercise = () => {
     } else {
       setRes(
         `Su capital Final es de: <strong>${numberToCurrency(capital)}</strong><br />
-        No supera el monto minimo de 5.000.000 en ganancias`
+        No supera el monto mínimo de 5.000.000 en ganancias`
       )
     }
   }
@@ -70,7 +70,7 @@ const Exercise = () => {
             __html: res
           }}
             />
-          : 'Ingresa tu Capital en Inversion y Tasa de Interes'}
+          : 'Ingresa tu Capital en Inversión y Tasa de Interés'}
       </div>
     </>
   )

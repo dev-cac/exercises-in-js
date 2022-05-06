@@ -32,7 +32,7 @@ const Modal = ({ isOpen, setIsOpen }) => {
       {
         isOpen && (
           <div
-            className='absolute z-50 top-0 backdrop-blur-sm left-0 w-full h-full bg-black/80 text-white overflow-auto'
+            className='absolute z-50 top-0 backdrop-blur-md left-0 w-full h-full bg-black/10 dark:bg-black/80 text-black dark:text-white overflow-auto'
             onClick={() => setIsOpen(false)}
           >
             <div className='h-full flex items-center'>
